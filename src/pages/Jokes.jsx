@@ -1,6 +1,9 @@
 import { getJokes } from '@/apis/jokes'
 import { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
+dayjs.extend(relativeTime)
 
 const Jokes = () => {
   const [jokes, setJokes] = useState([])
@@ -11,8 +14,7 @@ const Jokes = () => {
         const res = await getJokes()
         setJokes(res)
       } catch (error) {
-        console.log(error)
-        throw new Error('fetch channel error')
+        throw new Error('fetch channel error', error)
       }
     }
     loadJokes()
@@ -25,10 +27,7 @@ const Jokes = () => {
         {jokes.map(item => (
           <li key={item.joke_id}>
             {item.content} --{' '}
-            <span>
-              {dayjs(item.joke_created_at).format('MMM D, YYYY HH:mm')}
-            </span>{' '}
-            --
+            <span>{dayjs(item.joke_created_at).fromNow()}</span> --
             <span>like count: {item.like_count}</span>
           </li>
         ))}
