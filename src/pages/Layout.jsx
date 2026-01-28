@@ -1,44 +1,29 @@
-import { Outlet,NavLink } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
+import {
+  Sidebar,
+  SidebarBody,
+  SidebarItem,
+  SidebarSection,
+} from '@/components/sidebar'
 
-
-const Layout = ()=> {
+function Layout() {
   return (
-    <div>
-      <h1>Joke Share Layout page</h1>
-      <hr />
-      <NavLink
-          to="/jokes"
-          style={({ isActive }) => ({
-            textDecoration: "none",
-            fontSize: "18px",
-            fontWeight: isActive ? "700" : "500",
-            color: isActive ? "#2563eb" : "#333",
-            borderBottom: isActive ? "3px solid #2563eb" : "3px solid transparent",
-            paddingBottom: "6px",
-            transition: "0.2s",
-          })}
-        >
-          😂 Jokes
-        </NavLink>
-         <span> -- </span>
-               <NavLink
-          to="/submit"
-          style={({ isActive }) => ({
-            textDecoration: "none",
-            fontSize: "18px",
-            fontWeight: isActive ? "700" : "500",
-            color: isActive ? "#2563eb" : "#333",
-            borderBottom: isActive ? "3px solid #2563eb" : "3px solid transparent",
-            paddingBottom: "6px",
-            transition: "0.2s",
-          })}
-        >
-          ✍️ Submit Joke
-        </NavLink>
-      <hr />
-      <Outlet />
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-purple-500 via-pink-500 to-orange-500">
+      <div className="w-[75vw] h-[70vh] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 overflow-hidden flex">
+        <Sidebar className="w-72 shrink-0 border-r border-white/20 bg-white/10 backdrop-blur-md">
+          <SidebarBody>
+            <SidebarSection className="pt-12 pl-4">
+              <SidebarItem href="/jokes">😂 Jokes</SidebarItem>
+              <SidebarItem href="/submit">📝 Submit Joke</SidebarItem>
+            </SidebarSection>
+          </SidebarBody>
+        </Sidebar>
+        <main className="flex-1 bg-white/10 backdrop-blur-md p-22 overflow-auto">
+          <Outlet />
+        </main>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

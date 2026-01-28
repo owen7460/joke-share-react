@@ -22,7 +22,6 @@ const Jokes = () => {
 
   return (
     <>
-      <h2>Jokes</h2>
       <ul>
         {jokes.map(item => (
           <li key={item.joke_id}>
