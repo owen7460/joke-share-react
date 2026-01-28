@@ -33,7 +33,9 @@ const Jokes = () => {
             <DescriptionTerm>
               <span className="text-black/80">Joke Content</span>
             </DescriptionTerm>
-            <DescriptionDetails>{item.content}</DescriptionDetails>
+            <DescriptionDetails className="text-lg">
+              {item.content}
+            </DescriptionDetails>
 
             <DescriptionTerm>
               <span className="text-black/80">Created At</span>
