@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getWeather } from '@/apis/weather'
+import { getWeather } from '@/apis/Weather'
 
 function Weather() {
   const [weather, setWeather] = useState(null)
@@ -8,7 +8,7 @@ function Weather() {
     const loadWeather = async () => {
       const res = await getWeather('Calgary')
       setWeather(res)
-      console.log(res)
+      // console.log(res)
     }
     loadWeather()
   }, [])
