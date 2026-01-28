@@ -1,7 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 @import 'tailwindcss';
 
-
 @theme {
   --font-sans: "Inconsolata", monospace, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 18s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

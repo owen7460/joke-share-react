@@ -8,15 +8,15 @@ import {
 
 function Layout() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-purple-500 via-pink-500 to-orange-500">
-      <div className="w-[75vw] h-[70vh] bg-white/10 backdrop-blur-3xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden flex">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-yellow-500 via-pink-500 to-orange-500 animated-gradient">
+      <div className="w-[75vw] h-[70vh] bg-white/10 backdrop-blur-3xl rounded-4xl shadow-2xl border border-white/50 overflow-hidden flex">
         <Sidebar className="w-72 shrink-0 border-r border-white/20 bg-white/10 backdrop-blur-md">
           <SidebarBody>
             <SidebarSection className="pt-12 pl-4 space-y-2">
               <NavLink
                 to="/jokes"
                 className={({ isActive }) =>
-                  `rounded-lg px-4 py-2 transition ${
+                  `rounded-lg px-4 py-2 transition font-bold ${
                     isActive ? 'bg-white/80 font-semibold' : 'hover:bg-white/40'
                   }`
                 }
@@ -26,7 +26,7 @@ function Layout() {
               <NavLink
                 to="/submit"
                 className={({ isActive }) =>
-                  `rounded-lg px-4 py-2 transition ${
+                  `rounded-lg px-4 py-2 transition font-bold ${
                     isActive ? 'bg-white/80 font-semibold' : 'hover:bg-white/40'
                   }`
                 }
