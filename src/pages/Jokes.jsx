@@ -28,7 +28,10 @@ const Jokes = () => {
   return (
     <div className="space-y-8">
       {jokes.map(item => (
-        <div className="bg-white/05 backdrop-blur-3xl rounded-2xl shadow-2xl border border-white/30 p-4">
+        <div
+          key={item.joke_id}
+          className="bg-white/05 backdrop-blur-3xl rounded-2xl shadow-2xl border border-white/30 p-4"
+        >
           <DescriptionList>
             <DescriptionTerm>
               <span className="text-black/80">Joke Content</span>
