@@ -6,6 +6,7 @@ import { submitJoke } from '@/apis/SubmitJoke'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom'
+
 function SubmitJoke() {
   const [content, setContent] = useState('')
   const navigate = useNavigate()

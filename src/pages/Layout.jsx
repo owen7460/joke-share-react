@@ -5,6 +5,7 @@ import {
   SidebarItem,
   SidebarSection,
 } from '@/components/sidebar'
+import Weather from '@/pages/Weather'
 
 function Layout() {
   return (
@@ -32,6 +33,16 @@ function Layout() {
                 }
               >
                 📝 Submit Joke
+              </NavLink>
+              <NavLink
+                to="/weather"
+                className={({ isActive }) =>
+                  `rounded-lg px-4 py-2 transition font-bold ${
+                    isActive ? 'bg-white/80 font-semibold' : 'hover:bg-white/40'
+                  }`
+                }
+              >
+                🌤 Weather
               </NavLink>
             </SidebarSection>
           </SidebarBody>
