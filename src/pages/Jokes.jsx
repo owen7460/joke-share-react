@@ -56,7 +56,7 @@ const Jokes = () => {
             </DescriptionTerm>
             <DescriptionDetails>
               <p className="text-white/80">
-                {dayjs(item.created_at).fromNow()}
+                {dayjs(item.joke_created_at).fromNow()}
               </p>
             </DescriptionDetails>
 
