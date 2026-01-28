@@ -37,20 +37,35 @@ const Jokes = () => {
               <span className="text-black/80">Joke Content</span>
             </DescriptionTerm>
             <DescriptionDetails className="text-lg">
-              {item.content}
+              {item.content.includes('?') ? (
+                <div className="space-y-2">
+                  <p className=" text-white/80 font-semibold">
+                    {item.content.split('?')[0]}?
+                  </p>
+                  <p className="text-white/80">
+                    -- {item.content.split('?')[1].trim()}
+                  </p>
+                </div>
+              ) : (
+                <p>{item.content}</p>
+              )}
             </DescriptionDetails>
 
             <DescriptionTerm>
               <span className="text-black/80">Created At</span>
             </DescriptionTerm>
             <DescriptionDetails>
-              {dayjs(item.joke_created_at).fromNow()}
+              <p className="text-white/80">
+                {dayjs(item.created_at).fromNow()}
+              </p>
             </DescriptionDetails>
 
             <DescriptionTerm>
               <span className="text-black/80">Likes</span>
             </DescriptionTerm>
-            <DescriptionDetails>{item.like_count}</DescriptionDetails>
+            <DescriptionDetails>
+              <p className="text-white/80">{item.like_count}</p>
+            </DescriptionDetails>
           </DescriptionList>
         </div>
       ))}

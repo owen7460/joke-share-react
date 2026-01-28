@@ -28,13 +28,14 @@ function SubmitJoke() {
   return (
     <form onSubmit={handleSubmit}>
       <Field className="space-y-8">
-        <Label htmlFor="content" className="!text-4xl">
-          Input your joke
+        <Label htmlFor="content">
+          <p className="text-white text-2xl">Tell us your joke</p>
         </Label>
-        <Description className="!text-white">
-          Let's share your joke with the world!
+        <Description>
+          <p className="text-white">Let's share your joke with the world!</p>
         </Description>
         <Textarea
+          aria-label="Enter your joke"
           name="content"
           id="content"
           value={content}
@@ -46,8 +47,8 @@ function SubmitJoke() {
             }
           }}
         />
-        <Button type="submit" className="!text-black !bg-amber-100">
-          Submit
+        <Button type="submit" color="dark" outline>
+          <span className="text-white"> Submit</span>
         </Button>
       </Field>
     </form>
