@@ -32,7 +32,9 @@ function SubmitJoke() {
           <p className="text-white text-2xl">Tell us your joke</p>
         </Label>
         <Description>
-          <p className="text-white">Let's share your joke with the world!</p>
+          <span className="text-white">
+            Let's share your joke with the world!
+          </span>
         </Description>
         <Textarea
           aria-label="Enter your joke"
