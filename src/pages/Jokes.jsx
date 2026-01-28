@@ -27,7 +27,7 @@ const Jokes = () => {
           <li key={item.joke_id}>
             {item.content} --{' '}
             <span>{dayjs(item.joke_created_at).fromNow()}</span> --
-            <span>like count: {item.like_count}</span>
+            <span>likes: {item.like_count}</span>
           </li>
         ))}
       </ul>
