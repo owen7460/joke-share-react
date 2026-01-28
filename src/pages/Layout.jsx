@@ -36,7 +36,7 @@ function Layout() {
             </SidebarSection>
           </SidebarBody>
         </Sidebar>
-        <main className="flex-1 bg-white/10 backdrop-blur-md p-17 overflow-auto">
+        <main className="flex-1 bg-white/10 backdrop-blur-3xl p-17 overflow-auto">
           <Outlet />
         </main>
       </div>
