@@ -38,6 +38,8 @@ function SubmitJoke() {
           </span>
         </Description>
         <Textarea
+          rows="10"
+          textareaClassName="!text-2xl"
           aria-label="Enter your joke"
           name="content"
           id="content"
