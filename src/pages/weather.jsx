@@ -14,7 +14,13 @@ function Weather() {
   }, [])
 
   if (!weather) {
-    return <div>Loading...</div>
+    return (
+      <>
+        <div className="flex justify-center items-center min-h-full">
+          <p className="animate-pulse text-white text-2xl">Loading...</p>
+        </div>
+      </>
+    )
   }
 
   return (

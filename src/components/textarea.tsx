@@ -4,10 +4,10 @@ import React, { forwardRef } from 'react'
 
 export const Textarea = forwardRef(function Textarea(
   {
-    className,textareaClassName,
+    className,
     resizable = true,
     ...props
-  }: { className?: string; textareaClassName?: string; resizable?: boolean } & Omit<Headless.TextareaProps, 'as' | 'className'>,
+  }: { className?: string; resizable?: boolean } & Omit<Headless.TextareaProps, 'as' | 'className'>,
   ref: React.ForwardedRef<HTMLTextAreaElement>
 ) {
   return (
@@ -47,7 +47,6 @@ export const Textarea = forwardRef(function Textarea(
           'disabled:border-zinc-950/20 dark:disabled:border-white/15 dark:disabled:bg-white/2.5 dark:data-hover:disabled:border-white/15',
           // Resizable
           resizable ? 'resize-y' : 'resize-none',
-          textareaClassName,
         ])}
       />
     </span>

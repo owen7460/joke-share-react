@@ -15,8 +15,6 @@ dayjs.extend(relativeTime)
 
 const Jokes = () => {
   const [jokes, setJokes] = useState([])
-  const [likedJokesId, setLikedJokesId] = useState(null)
-  const [refreshTrigger, setRefreshTrigger] = useState(0)
 
   useEffect(() => {
     const loadJokes = async () => {
@@ -28,16 +26,28 @@ const Jokes = () => {
       }
     }
     loadJokes()
-  }, [refreshTrigger])
+  }, [])
 
   const handleLikeJoke = async jokeId => {
-    setLikedJokesId(jokeId)
+    setJokes(prev =>
+      prev.map(item =>
+        item.joke_id === jokeId
+          ? { ...item, like_count: item.like_count + 1 }
+          : item
+      )
+    )
     try {
       const res = await likeJoke(jokeId)
-      setRefreshTrigger(refreshTrigger + 1)
-      console.log(res, likedJokesId, refreshTrigger)
-      toast.success('Joke liked successfully')
+      toast.success(`${res.message} 🙈`)
     } catch (error) {
+      toast.error('Joke like failed')
+      setJokes(prev =>
+        prev.map(item =>
+          item.joke_id === jokeId
+            ? { ...item, like_count: item.like_count - 1 }
+            : item
+        )
+      )
       throw new Error('like joke error', error)
     }
   }
@@ -91,7 +101,7 @@ const Jokes = () => {
                 outline
                 onClick={() => handleLikeJoke(item.joke_id)}
               >
-                <span> Like this joke ❤️</span>
+                <span className="text-orange-600">Like this joke ❤️</span>
               </Button>
               <Button color="orange">Collect this joke ⭐️</Button>
             </DescriptionDetails>
