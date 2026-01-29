@@ -95,7 +95,8 @@ function Layout() {
             </NavLink>
           </SidebarFooter>
         </Sidebar>
-        <main className="flex-1 bg-white/10 backdrop-blur-3xl p-17 overflow-auto">
+
+        <main className="flex-1 bg-white/10 backdrop-blur-3xl p-26 overflow-auto mask-[linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
           <Outlet />
         </main>
       </div>
