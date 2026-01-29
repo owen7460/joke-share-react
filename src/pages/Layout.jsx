@@ -26,7 +26,7 @@ function Layout() {
   }
   return (
     <div className="min-h-screen flex items-center justify-center  bg-linear-to-br from-amber-600 via-pink-500 to-orange-500 animated-gradient">
-      <div className="w-[75vw] h-[70vh] bg-white/10 backdrop-blur-3xl rounded-4xl shadow-2xl border border-white/50 overflow-hidden flex">
+      <div className="w-[77vw] h-[80vh] bg-white/10 backdrop-blur-3xl rounded-4xl shadow-2xl border border-white/50 overflow-hidden flex">
         <Sidebar className="w-72 shrink-0 border-r border-white/20 bg-white/10 backdrop-blur-md">
           <SidebarHeader>
             <SidebarSection className="text-white pt-12 pl-4 space-y-2">
