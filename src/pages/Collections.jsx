@@ -12,6 +12,16 @@ dayjs.extend(relativeTime)
 function Collections() {
   const jokes = useJokesStore(state => state.jokes)
 
+  if (jokes.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-full">
+        <p className="animate-pulse text-white text-2xl">
+          No jokes collected yet 🤣
+        </p>
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="space-y-8">
