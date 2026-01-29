@@ -10,11 +10,17 @@ import {
 import { Button } from '@/components/button'
 import { likeJoke } from '@/apis/likeJoke'
 import { toast } from 'react-toastify'
+import useJokesStore from '@/stores/jokesStore'
 
 dayjs.extend(relativeTime)
 
 const Jokes = () => {
   const [jokes, setJokes] = useState([])
+
+  const handleCollectJoke = joke => {
+    useJokesStore.setState(prev => ({ jokes: [...prev.jokes, joke] }))
+    toast.success('Joke collected successfully')
+  }
 
   useEffect(() => {
     const loadJokes = async () => {
@@ -98,12 +104,13 @@ const Jokes = () => {
             <DescriptionDetails className="flex gap-6">
               <Button
                 color="white"
-                outline
                 onClick={() => handleLikeJoke(item.joke_id)}
               >
                 <span className="text-orange-600">Like this joke ❤️</span>
               </Button>
-              <Button color="orange">Collect this joke ⭐️</Button>
+              <Button color="orange" onClick={() => handleCollectJoke(item)}>
+                Collect this joke ⭐️
+              </Button>
             </DescriptionDetails>
           </DescriptionList>
         </div>
