@@ -3,6 +3,7 @@ import Layout from '@/pages/Layout'
 import Jokes from '@/pages/Jokes'
 import SubmitJoke from '@/pages/SubmitJoke'
 import Weather from '@/pages/Weather'
+import Collections from '@/pages/Collections'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
       { path: 'jokes', element: <Jokes /> },
       { path: 'submit', element: <SubmitJoke /> },
       { path: 'weather', element: <Weather /> },
+      { path: 'collections', element: <Collections /> },
     ],
   },
 ])
