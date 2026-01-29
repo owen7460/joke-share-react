@@ -84,9 +84,12 @@ function Layout() {
                     src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                     alt={weather.weather[0].description}
                   />
-                  <span className={isActive ? 'text-gray-700' : 'text-white'}>
-                    Calgary - {weather.weather[0].main} {weather.main.temp}°C
-                  </span>
+                  <div className={isActive ? 'text-gray-700' : 'text-white'}>
+                    <p>Calgary</p>
+                    <p>
+                      {weather.weather[0].main} {weather.main.temp}°C
+                    </p>
+                  </div>
                 </div>
               )}
             </NavLink>
