@@ -1,9 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import Layout from '@/pages/Layout'
-import Jokes from '@/pages/Jokes'
-import SubmitJoke from '@/pages/SubmitJoke'
-import Weather from '@/pages/Weather'
-import Collections from '@/pages/Collections'
+import { Layout, Jokes, SubmitJoke, Weather, Collections } from '@/pages'
 
 const router = createBrowserRouter([
   {

@@ -7,11 +7,16 @@ import {
   DescriptionList,
   DescriptionTerm,
 } from '@/components/description-list'
+import { Button } from '@/components/button'
+import { likeJoke } from '@/apis/likeJoke'
+import { toast } from 'react-toastify'
 
 dayjs.extend(relativeTime)
 
 const Jokes = () => {
   const [jokes, setJokes] = useState([])
+  const [likedJokesId, setLikedJokesId] = useState(null)
+  const [refreshTrigger, setRefreshTrigger] = useState(0)
 
   useEffect(() => {
     const loadJokes = async () => {
@@ -23,7 +28,19 @@ const Jokes = () => {
       }
     }
     loadJokes()
-  }, [])
+  }, [refreshTrigger])
+
+  const handleLikeJoke = async jokeId => {
+    setLikedJokesId(jokeId)
+    try {
+      const res = await likeJoke(jokeId)
+      setRefreshTrigger(refreshTrigger + 1)
+      console.log(res, likedJokesId, refreshTrigger)
+      toast.success('Joke liked successfully')
+    } catch (error) {
+      throw new Error('like joke error', error)
+    }
+  }
 
   return (
     <div className="space-y-8">
@@ -61,10 +78,22 @@ const Jokes = () => {
             </DescriptionDetails>
 
             <DescriptionTerm>
-              <span className="text-black/80">Likes</span>
+              <p className="text-black/80">
+                Likes:{' '}
+                <span className="text-orange-600 text-xl font-bold">
+                  {item.like_count}
+                </span>
+              </p>
             </DescriptionTerm>
-            <DescriptionDetails>
-              <p className="text-white/80">{item.like_count}</p>
+            <DescriptionDetails className="flex gap-6">
+              <Button
+                color="white"
+                outline
+                onClick={() => handleLikeJoke(item.joke_id)}
+              >
+                <span> Like this joke ❤️</span>
+              </Button>
+              <Button color="orange">Collect this joke ⭐️</Button>
             </DescriptionDetails>
           </DescriptionList>
         </div>
