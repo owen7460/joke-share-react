@@ -18,7 +18,7 @@ function Layout() {
   })
 
   useEffect(() => {
-    if (!isBooting) {
+    if (isBooting === false) {
       return
     }
 

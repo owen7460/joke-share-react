@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getWeather } from '@/apis/Weather'
+import BootLoading from './BootLoading'
 
 function Weather() {
   const [weather, setWeather] = useState(null)
@@ -8,19 +9,12 @@ function Weather() {
     const loadWeather = async () => {
       const res = await getWeather('Calgary')
       setWeather(res)
-      // console.log(res)
     }
     loadWeather()
   }, [])
 
   if (!weather) {
-    return (
-      <>
-        <div className="flex justify-center items-center min-h-full">
-          <p className="animate-pulse text-white text-2xl">Loading...</p>
-        </div>
-      </>
-    )
+    return <BootLoading />
   }
 
   return (
