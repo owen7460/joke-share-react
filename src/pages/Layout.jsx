@@ -10,8 +10,26 @@ import {
 import Weather from '@/pages/Weather'
 import { useState, useEffect } from 'react'
 import { getWeather } from '@/apis/Weather'
+import BootLoading from './BootLoading'
 
 function Layout() {
+  const [isBooting, setIsBooting] = useState(() => {
+    return !sessionStorage.getItem('booted')
+  })
+
+  useEffect(() => {
+    if (!isBooting) {
+      return
+    }
+
+    const timer = setTimeout(() => {
+      sessionStorage.setItem('booted', 'true')
+      setIsBooting(false)
+    }, 700)
+
+    return () => clearTimeout(timer)
+  }, [isBooting])
+
   const [weather, setWeather] = useState(null)
   useEffect(() => {
     const loadWeather = async () => {
@@ -21,8 +39,8 @@ function Layout() {
     loadWeather()
   }, [])
 
-  if (!weather) {
-    return <div>Loading...</div>
+  if (isBooting) {
+    return <BootLoading />
   }
   return (
     <div className="min-h-screen flex items-center justify-center  bg-linear-to-br from-amber-600 via-pink-500 to-orange-500 animated-gradient">
