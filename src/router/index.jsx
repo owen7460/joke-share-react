@@ -6,7 +6,8 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-      { index: true, element: <Navigate to="/jokes" replace /> },
+      { index: true, element: <Jokes /> },
+      // { index: true, element: <Navigate to="/jokes" replace /> },
       { path: 'jokes', element: <Jokes /> },
       { path: 'submit', element: <SubmitJoke /> },
       { path: 'weather', element: <Weather /> },
