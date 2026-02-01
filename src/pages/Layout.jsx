@@ -31,7 +31,7 @@ function Layout() {
           <SidebarHeader>
             <SidebarSection className="text-white pt-12 pl-4 space-y-2">
               <NavLink
-                to="/jokes"
+                to="/"
                 className={({ isActive }) =>
                   `rounded-lg px-4 py-2 transition font-bold ${
                     isActive
