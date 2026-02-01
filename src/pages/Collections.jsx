@@ -4,13 +4,16 @@ import {
   DescriptionTerm,
   DescriptionDetails,
 } from '@/components/description-list'
+import { Button } from '@/components/button'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { toast } from 'react-toastify'
 
 dayjs.extend(relativeTime)
 
 function Collections() {
   const jokes = useJokesStore(state => state.jokes)
+  const removeJoke = useJokesStore(state => state.removeJoke)
 
   if (jokes.length === 0) {
     return (
@@ -20,6 +23,12 @@ function Collections() {
         </p>
       </div>
     )
+  }
+
+  const handleRemoveJoke = id => {
+    removeJoke(id)
+
+    toast.success(`the joke has been removed`)
   }
 
   return (
@@ -66,7 +75,12 @@ function Collections() {
                   </span>
                 </p>
               </DescriptionTerm>
-              {/* <DescriptionDetails className="flex gap-6">ok</DescriptionDetails> */}
+              <DescriptionDetails className="flex gap-6">
+                {' '}
+                <Button onClick={() => handleRemoveJoke(item.joke_id)}>
+                  Remove this joke
+                </Button>
+              </DescriptionDetails>
             </DescriptionList>
           </div>
         ))}
