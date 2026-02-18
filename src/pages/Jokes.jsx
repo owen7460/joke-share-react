@@ -8,7 +8,7 @@ import {
   DescriptionTerm,
 } from '@/components/description-list'
 import { Button } from '@/components/button'
-import { likeJoke } from '@/apis/likeJoke'
+import { LikeJoke } from '@/apis/LikeJoke'
 import { toast } from 'react-toastify'
 import useJokesStore from '@/stores/jokesStore'
 
