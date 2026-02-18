@@ -7,7 +7,8 @@ import {
   SidebarHeader,
   SidebarFooter,
 } from '@/components/sidebar'
-import Weather from '@/pages/Weather2'
+
+import Weather from '@/pages/Weather'
 import { useState, useEffect } from 'react'
 import { getWeather } from '@/apis/Weather'
 import BootLoading from './BootLoading'

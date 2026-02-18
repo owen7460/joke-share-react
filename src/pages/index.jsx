@@ -4,4 +4,4 @@ export { default as SubmitJoke } from './SubmitJoke'
 // export { default as Weather } from './Weather'
 export { default as Collections } from './Collections'
 
-export { default as Weather } from './Weather2.jsx'
+export { default as Weather } from './Weather.jsx'
