@@ -1,5 +1,8 @@
 export { default as Layout } from './Layout'
 export { default as Jokes } from './Jokes'
 export { default as SubmitJoke } from './SubmitJoke'
-export { default as Weather } from './Weather'
+// export { default as Weather } from './Weather'
 export { default as Collections } from './Collections'
+
+//this is
+export { default as Weather } from './Weather.jsx'
