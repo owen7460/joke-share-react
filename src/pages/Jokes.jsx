@@ -1,4 +1,4 @@
-import { getJokes } from '@/apis/jokes'
+import { getJokes } from '@/apis/getJokes.jsx'
 import { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
@@ -8,7 +8,7 @@ import {
   DescriptionTerm,
 } from '@/components/description-list'
 import { Button } from '@/components/button'
-import { LikeJoke } from '@/apis/LikeJoke'
+import { likeJoke } from '@/apis/likeJoke.jsx'
 import { toast } from 'react-toastify'
 import useJokesStore from '@/stores/jokesStore'
 
@@ -43,7 +43,7 @@ const Jokes = () => {
       )
     )
     try {
-      const res = await LikeJoke(jokeId)
+      const res = await likeJoke(jokeId)
       toast.success(`${res.message} 🙈`)
     } catch (error) {
       toast.error('Joke like failed')

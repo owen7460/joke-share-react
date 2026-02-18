@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getWeather } from '@/apis/Weather.jsx'
+import { getWeather } from '@/apis/getWeather.jsx'
 import BootLoading from './BootLoading'
 
 function Weather() {
