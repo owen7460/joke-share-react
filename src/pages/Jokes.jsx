@@ -43,7 +43,7 @@ const Jokes = () => {
       )
     )
     try {
-      const res = await likeJoke(jokeId)
+      const res = await LikeJoke(jokeId)
       toast.success(`${res.message} 🙈`)
     } catch (error) {
       toast.error('Joke like failed')
