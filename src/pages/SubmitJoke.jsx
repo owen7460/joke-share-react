@@ -36,6 +36,7 @@ function SubmitJoke() {
           <span className="text-white">
             Let's share your joke with the world!
           </span>
+          <p>Line breaks will be added automatically. Press Enter to submit.</p>
         </Description>
         <Textarea
           rows="10"
