@@ -30,13 +30,13 @@ function SubmitJoke() {
     <form onSubmit={handleSubmit}>
       <Field className="space-y-8">
         <Label htmlFor="content">
-          <p className="text-white text-2xl">Tell us your joke</p>
+          <p className="text-white text-4xl">Tell us your joke</p>
         </Label>
         <Description>
-          <span className="text-white">
+          <span className="text-white text-lg">
             Let's share your joke with the world!
           </span>
-          <p className="text-white mt-2">
+          <p className="text-white text-sm mt-2">
             Line breaks will be added automatically. Press Enter to submit.
           </p>
         </Description>
