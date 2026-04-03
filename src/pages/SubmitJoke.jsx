@@ -36,9 +36,11 @@ function SubmitJoke() {
           <span className="text-white text-lg">
             Let's share your joke with the world!
           </span>
-          <p className="text-white text-sm mt-2">
+        </Description>
+        <Description>
+          <span className="text-white text-sm mt-2">
             Line breaks will be added automatically. Press Enter to submit.
-          </p>
+          </span>
         </Description>
         <Textarea
           rows="10"

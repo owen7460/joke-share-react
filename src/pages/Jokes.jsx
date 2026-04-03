@@ -11,6 +11,7 @@ import { Button } from '@/components/button'
 import { likeJoke } from '@/apis/likeJoke.jsx'
 import { toast } from 'react-toastify'
 import useJokesStore from '@/stores/jokesStore'
+import _ from 'lodash'
 
 dayjs.extend(relativeTime)
 
@@ -58,8 +59,34 @@ const Jokes = () => {
     }
   }
 
+  const HandleMostLikedJokes = () => {
+    setJokes(_.orderBy(jokes, ['like_count'], ['desc']))
+  }
+
+  const HandleMostRecentJokes = () => {
+    setJokes(_.orderBy(jokes, ['joke_created_at'], ['desc']))
+  }
   return (
     <div className="space-y-8">
+      <div className="flex gap-4">
+        <Button
+          color="orange"
+          onClick={() => {
+            HandleMostLikedJokes()
+          }}
+        >
+          ❤️ Most liked jokes
+        </Button>
+        <Button
+          color="zinc"
+          onClick={() => {
+            HandleMostRecentJokes()
+          }}
+        >
+          📅 Most recent jokes
+        </Button>
+      </div>
+
       {jokes.map(item => (
         <div
           key={item.joke_id}
