@@ -44,7 +44,7 @@ Create a `.env` file in the project root and set:
 
 The Axios instance is created in `src/apis/http.jsx`.
 
-## Backend API (expected shape)
+## Required Backend API Endpoints
 
 The client assumes a REST API with at least:
 
