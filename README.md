@@ -2,6 +2,15 @@
 
 Frontend for **Jokes Share**, a small web app for browsing, liking, and submitting jokes. This repository is the React single-page application that talks to a jokes RESTful API and includes a extra page for weather function to show the current weather of Calgary city.
 
+## Live Site
+
+[https://owenouyang.com](https://owenouyang.com)
+
+<p align="center">
+  <img src="./public/readme/jokes.png" alt="Likes page of Jokes Share React" />
+  <img src="./public/readme/collections.png" alt="Collections page of Jokes Share React" />
+</p>
+
 ## Features
 
 - **Jokes feed** — Load jokes from the backend, sort by most liked or most recent, and like jokes with optimistic UI updates.
@@ -11,7 +20,7 @@ Frontend for **Jokes Share**, a small web app for browsing, liking, and submitti
 
 ## Tech stack
 
-- [React 19](https://react.dev/) with [Vite 7](https://vite.dev/)
+- [React 19](https://react.dev/)
 - [React Router 7](https://reactrouter.com/) (layout + nested routes)
 - [Tailwind CSS v4](https://tailwindcss.com/) via `@tailwindcss/vite`
 - [Axios](https://axios-http.com/) for HTTP
